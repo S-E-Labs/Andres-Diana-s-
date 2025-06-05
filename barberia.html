@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="./barber.png" type="image/png" />
+  <title>PERRUNCHO BARBER</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+      background-image: url('./barber.png');
+      background-repeat: repeat;
+      background-size: 150px;
+      opacity: 0.95;
+    }
+
+    header {
+      background: #e63946;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    header a:hover {
+      color: #ffe5e5;
+    }
+
+    main {
+      background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+      background-size: cover;
+      min-height: 100vh;
+      padding: 40px 5%;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.2rem;
+      color: #ffffff;
+      border-bottom: 2px solid #e63946;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+
+    .services {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      width: 260px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(230, 57, 70, 0.4);
+    }
+
+    .service-card img {
+      width: 70px;
+      margin-bottom: 15px;
+      filter: brightness(0) invert(1);
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      color: #e63946;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-bottom: 60px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-size: 1rem;
+      color: #f5f5f5;
+    }
+
+    input, select {
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #2c2c2c;
+      color: #fff;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: #aaa;
+    }
+
+    button[type="submit"] {
+      padding: 12px;
+      background: #e63946;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background: #b8323a;
+    }
+
+    footer {
+      background: #000000;
+      color: white;
+      padding: 30px 20px;
+    }
+
+    footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    footer .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    footer h5 {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer ul li {
+      margin-bottom: 10px;
+    }
+
+    footer ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer ul li a:hover {
+      color: #e63946;
+    }
+
+    .social-icons a {
+      margin-right: 15px;
+      font-size: 24px;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    /* Iconos con colores originales */
+    .social-icons a.facebook {
+      color: #1877f2;
+    }
+
+    .social-icons a.instagram {
+      color: #e4405f;
+    }
+
+    .social-icons a.whatsapp {
+      color: #25d366;
+    }
+
+    .social-icons a.tiktok {
+      color: #000000; /* negro para TikTok, porque el icono es colorido */
+      filter: none;
+    }
+
+    .text-center {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 700px) {
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      footer .row {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+  </style>
+  <!-- Iconos Bootstrap (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+</head>
+<body>
+
+<header>
+  <a href="#servicios">Servicios</a>
+  <a href="#galeria">Galería</a>
+  <a href="#reserva">Reservas</a>
+</header>
+
+<main>
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="services">
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/100/ffffff/haircut.png" alt="Corte de cabello" />
+        <h3>Corte de cabello</h3>
+        <p>Diseños modernos y clásicos para tu estilo único.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/64/ffffff/straight-razor.png" alt="Navaja clásica" />
+        <h3>Afeitado</h3>
+        <p>Afeitado al ras con navaja para una piel suave y sin irritación.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/100/ffffff/mustache.png" alt="Arreglo de barba" />
+        <h3>Arreglo de barba</h3>
+        <p>Perfilado y cuidado experto para tu barba perfecta.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <h2>Galería</h2>
+    <div class="gallery">
+      <img src="./R.jpg" alt="Barbería 1" />
+      <img src="./l.jpg" alt="Barbería 2" />
+      <img src="./p.jpg" alt="Barbería 3" />
+      <img src="./ñ.jpg" alt="Barbería 4" />
+    </div>
+  </section>
+
+  <section id="reserva">
+    <h2>Reserva tu cita</h2>
+    <form id="reservaForm">
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="123-456-7890" required />
+
+      <label for="tipo">Tipo de servicio:</label>
+      <select id="tipo" name="tipo" required>
+        <option value="">Selecciona un servicio</option>
+        <option value="Corte de cabello">Corte de cabello</option>
+        <option value="Afeitado">Afeitado</option>
+        <option value="Arreglo de barba">Arreglo de barba</option>
+      </select>
+
+      <label for="fecha">Fecha de la cita:</label>
+      <input type="date" id="fecha" name="fecha" required />
+
+      <label for="hora">Hora de la cita:</label>
+      <input type="time" id="hora" name="hora" required />
+
+      <button type="submit">Enviar reserva</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <div>
+        <h5>Contáctanos</h5>
+        <p>Dirección: IZA - BOYACA - COLOMBIA </p>
+        <p>Teléfono: +57 314 4778275</p>
+        <p>Email: kevinandresdiaz158@gmail.com </p>
+      </div>
+      <div>
+        <h5>Síguenos</h5>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://instagram.com" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://wa.me/573144778275" target="_blank" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://www.tiktok.com" target="_blank" class="tiktok"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+ document.getElementById('reservaForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const nombre = document.getElementById('nombre').value.trim();
+  const telefono = document.getElementById('telefono').value.trim();
+  const tipo = document.getElementById('tipo').value;
+  const fecha = document.getElementById('fecha').value;
+  const hora = document.getElementById('hora').value;
+
+  const numeroWhatsApp = '573000000000'; // Cambia por tu número
+
+  // Mensaje con emojis simples para WhatsApp (Unicode seguro)
+  const mensaje = 
+    "¡Hola! 👋\n" +
+    "Me gustaría reservar una cita en Perruncho Barber ✂️🧔‍♂️\n\n" +
+    "📋 *Datos de la reserva:*\n" +
+    "👉 *Nombre:* " + nombre + "\n" +
+    "👉 *Teléfono:* " + telefono + "\n" +
+    "👉 *Servicio:* " + tipo + "\n" +
+    "👉 *Fecha:* " + fecha + "\n" +
+    "👉 *Hora:* " + hora + "\n\n" +
+    "😊 ¡Gracias por tu atención! Espero su confirmación.";
+
+
+
+    // Codificar mensaje para URL
+    const url = `https://wa.me/${573144778275}?text=${encodeURIComponent(mensaje)}`;
+
+    // Abrir WhatsApp en una nueva pestaña
+    window.open(url, '_blank');
+ });
+</script>
+
+</body>
+</html>

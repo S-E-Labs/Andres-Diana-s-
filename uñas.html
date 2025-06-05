@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="./uñas.png" type="image/png" />
+  <title>Uñas Perfectas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f8f0f5, #ffe6f0);
+      background-image: url('./uñas.png');
+      background-repeat: repeat;
+      background-size: 120px;
+      opacity: 0.95;
+    }
+
+    header {
+      background: #d6336c;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    header a:hover {
+      color: #ffcce3;
+    }
+
+    main {
+      background: linear-gradient(135deg, #f8f0f5, #ffe6f0);
+      min-height: 100vh;
+      padding: 40px 5%;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.2rem;
+      color: #b31257;
+      border-bottom: 2px solid #d6336c;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+
+    .services {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #d6336c;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(214, 51, 108, 0.5);
+      padding: 20px;
+      width: 260px;
+      text-align: center;
+    }
+
+    .service-card img {
+      width: 70px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      color: #d6336c;
+    }
+
+    .service-card ul {
+      text-align: left;
+      margin-top: 10px;
+      padding-left: 15px;
+      font-size: 0.95rem;
+      color: #6a0d46;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-bottom: 60px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(214, 51, 108, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(214, 51, 108, 0.5);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-size: 1rem;
+      color: #6a0d46;
+    }
+
+    input, select {
+      padding: 10px;
+      border: 1px solid #d6336c;
+      border-radius: 8px;
+      background: #fff0f6;
+      color: #6a0d46;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    button[type="submit"] {
+      padding: 12px;
+      background: #d6336c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background: #a42a56;
+    }
+
+    footer {
+      background: #6a0d46;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 24px;
+      color: white;
+    }
+
+    @media (max-width: 700px) {
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="#servicios">Servicios</a>
+  <a href="#galeria">Galería</a>
+  <a href="#reserva">Reserva</a>
+</header>
+
+<main>
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="services">
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/100/d6336c/manicure.png" alt="Manicure" />
+        <h3>Manicure</h3>
+        <ul>
+          <li><strong>Tradicional:</strong> limpieza en humedo</li>
+          <li><strong>Semipermanente:</strong> esmalte de larga duración.</li>
+          <li><strong>Poligel:</strong> técnica flexible y resistente.</li>
+          <li><strong>Softgel:</strong> más ligera y natural.</li>
+          <li><strong>Acrílico:</strong> uñas fuertes y moldeables.</li>
+          <li><strong>Dipin:</strong>Capa de refuerzo en uña natural.</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/100/d6336c/pedicure.png" alt="Pedicure" />
+        <h3>Pedicure</h3>
+        <ul>
+          <li><strong>Tradicional:</strong> cuidado clásico de pies y uñas.</li>
+          <li><strong>Semipermanente:</strong> mayor duración del color.</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/100/d6336c/nail-polish.png" alt="Esmaltado" />
+        <h3>Esmaltado</h3>
+        <ul>
+          <li><strong>Diseños en 3D:</strong> decoraciones en relieve personalizadas.</li>
+          <li><strong>Acrílico:</strong> técnica sólida con diseños duraderos.</li>
+          <li><strong>Gel de construcción:</strong> modelado artístico en gel UV.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <h2>Galería</h2>
+    <div class="gallery">
+      <img src="./4.jpeg" alt="Diseño uñas 1" />
+      <img src="./2.jpeg" alt="Diseño uñas 2" />
+      <img src="./3.jpeg" alt="Diseño uñas 3" />
+      <img src="./WhatsApp Image 2025-06-05 at 3.09.20 PM.jpeg" alt="Diseño uñas 4" />
+      <img src="./5.jpeg" alt="Diseño uñas 3" />
+      <img src="./6.jpeg" alt="Diseño uñas 3" />
+    </div>
+  </section>
+
+  <section id="reserva">
+    <h2>Reserva tu cita</h2>
+    <form id="reservaForm">
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="123-456-7890" required />
+
+      <label for="tipo">Tipo de servicio:</label>
+      <select id="tipo" name="tipo" required>
+        <option value="">Selecciona un servicio</option>
+        <option value="Manicure">Manicure</option>
+        <option value="Pedicure">Pedicure</option>
+        <option value="Esmaltado">Esmaltado</option>
+      </select>
+
+      <label for="subtipo">Tipo específico:</label>
+      <select id="subtipo" name="subtipo" required>
+        <option value="">Selecciona primero un servicio</option>
+      </select>
+
+      <label for="fecha">Fecha de la cita:</label>
+      <input type="date" id="fecha" name="fecha" required />
+
+      <label for="hora">Hora de la cita:</label>
+      <input type="time" id="hora" name="hora" required />
+
+      <button type="submit">Enviar reserva</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <p>Dirección: Iza - Boyacá - COLOMBIA</p>
+    <p>Teléfono: +57 321 4690380</p>
+    <p>Email: dianaafricano859@gmail.com</p>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/africano2385?igsh=MXQwaXNuajJkMjhpdQ==" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="https://wa.me/573214690380" target="_blank"><i class="bi bi-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const servicios = {
+    Manicure: ["Tradicional", "Semipermanente", "Poligel", "Softgel", "Acrílico", "Dipin"],
+    Pedicure: ["Tradicional", "Semipermanente"],
+    Esmaltado: ["Diseños en 3D", "Acrílico", "Gel de construcción"]
+  };
+
+  document.getElementById('tipo').addEventListener('change', function () {
+    const subtipo = document.getElementById('subtipo');
+    const seleccion = this.value;
+    subtipo.innerHTML = '<option value="">Selecciona un tipo específico</option>';
+    if (servicios[seleccion]) {
+      servicios[seleccion].forEach(function (opcion) {
+        const opt = document.createElement('option');
+        opt.value = opcion;
+        opt.textContent = opcion;
+        subtipo.appendChild(opt);
+      });
+    }
+  });
+
+  document.getElementById('reservaForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+    const tipo = document.getElementById('tipo').value;
+    const subtipo = document.getElementById('subtipo').value;
+    const fecha = document.getElementById('fecha').value;
+    const hora = document.getElementById('hora').value;
+
+    const numeroWhatsApp = '573001234567';
+    const mensaje =
+      "¡Hola! 👋\n" +
+      "Quisiera reservar una cita en Uñas Perfectas 💅🏻\n\n" +
+      "📋 *Datos de la reserva:*\n" +
+      `👉 *Nombre:* ${nombre}\n` +
+      `👉 *Teléfono:* ${telefono}\n` +
+      `👉 *Servicio:* ${tipo}\n` +
+      `👉 *Tipo:* ${subtipo}\n` +
+      `👉 *Fecha:* ${fecha}\n` +
+      `👉 *Hora:* ${hora}`;
+
+    const urlWhatsApp = `https://wa.me/${573214690380}?text=${encodeURIComponent(mensaje)}`;
+    window.open(urlWhatsApp, '_blank');
+  });
+</script>
+
+</body>
+</html>

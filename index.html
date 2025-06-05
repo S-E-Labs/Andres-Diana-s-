@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="./logo.png" type="image/png" />
+  <title>Andres & Diana’s</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    :root {
+      --barber-bg: #0f0f0f;
+      --barber-text: #e0e0e0;
+      --nails-bg: #ffebf2;
+      --nails-text: #d63384;
+    }
+    * {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, var(--barber-bg) 50%, var(--nails-bg) 50%);
+      color: var(--barber-text);
+      animation: pageFade 1.5s ease-in-out;
+    }
+    @keyframes pageFade {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .navbar {
+      background-color: black;
+    }
+    .hero {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+    }
+    .section-half {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
+    }
+    .barber-half {
+      background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+      color: var(--barber-text);
+      position: relative;
+    }
+    .barber-half::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150px;
+      height: 150px;
+      background: url('./barber.png') no-repeat center center / contain;
+      opacity: 0.1;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .nails-half {
+      background: linear-gradient(135deg, #ffe0f0, #fff0fa);
+      color: var(--nails-text);
+      position: relative;
+    }
+    .nails-half::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150px;
+      height: 150px;
+      background: url('./uñas.png') no-repeat center center / contain;
+      opacity: 0.1;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .barber-half > *,
+    .nails-half > * {
+      position: relative;
+      z-index: 1;
+    }
+    .features-list li {
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+      font-size: 1rem;
+      list-style: none;
+      text-align: left;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .features-list li i {
+      margin-right: 8px;
+    }
+    .btn-hover-scale {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn-hover-scale:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+    .barber-half p,
+    .nails-half p {
+      font-size: 1.15rem;
+      line-height: 1.5;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1.5rem;
+    }
+    .btn-pink {
+      background-color: #ff69b4;
+      color: white;
+      transition: 0.3s;
+      border: none;
+    }
+    .btn-pink:hover {
+      background-color: #d63384;
+    }
+    .btn-dark-custom {
+      background-color: #111;
+      color: white;
+      border: none;
+      transition: 0.3s;
+    }
+    .btn-dark-custom:hover {
+      background-color: #333;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    footer {
+      background-color: #000;
+      color: #ccc;
+      text-align: center;
+      padding: 1.5rem 0;
+      animation: fadeInUp 1.5s ease;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 1.8rem;
+      transition: transform 0.4s ease, filter 0.4s ease, text-shadow 0.4s ease;
+      display: inline-block;
+    }
+    .social-icons a:hover {
+      transform: scale(1.3) rotate(3deg);
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+      text-shadow: 0 0 8px currentColor;
+    }
+    .facebook { color: #1877f2; }
+    .instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+    .whatsapp { color: #25d366; }
+    .tiktok { color: #fff; }
+    footer .container { max-width: 960px; }
+    footer h5 { margin-bottom: 1rem; font-weight: 600; }
+    footer ul {
+      padding-left: 0;
+      list-style: none;
+    }
+    footer ul li {
+      margin-bottom: 0.5rem;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+    footer p { margin-bottom: 0.3rem; }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        height: auto;
+      }
+      .section-half {
+        width: 100%;
+        box-shadow: none;
+        padding: 2rem 1rem;
+      }
+      body {
+        background: var(--barber-bg);
+        color: var(--barber-text);
+      }
+      .nails-half {
+        background: var(--nails-bg);
+        color: var(--nails-text);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark shadow">
+    <div class="container justify-content-between">
+      <a class="navbar-brand fw-bold" href="#">Andres & Diana’s</a>
+      <a href="login.html" class="btn btn-outline-light">
+        <i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <!-- Barber -->
+    <div class="section-half barber-half">
+      <h1><i class="bi bi-scissors"></i> Barbería Profesional</h1>
+      <p>Descubre estilos clásicos y modernos hechos a medida por nuestros expertos barberos. 
+        Cuidado personal con productos premium para un acabado perfecto.</p>
+      <ul class="features-list">
+        <li><i class="bi bi-check-circle-fill text-success"></i> Corte personalizado según tu estilo</li>
+        <li><i class="bi bi-check-circle-fill text-success"></i> Afeitado tradicional con navaja</li>
+        <li><i class="bi bi-check-circle-fill text-success"></i> Tratamientos para cuidado de la barba</li>
+      </ul>
+      <a href="barberia.html" class="btn btn-dark-custom btn-lg btn-hover-scale">¡Reserva tu cita!</a>
+    </div>
+    <!-- Nails -->
+    <div class="section-half nails-half">
+      <h1><i class="bi bi-brush"></i> Estilos de Uñas Únicos</h1>
+      <p>Expresa tu personalidad con nuestros diseños vibrantes y personalizados. 
+        Manicure y pedicure con técnicas profesionales para un acabado duradero.</p>
+      <ul class="features-list">
+        <li><i class="bi bi-check-circle-fill text-danger"></i> Diseño de uñas personalizado</li>
+        <li><i class="bi bi-check-circle-fill text-danger"></i> Uso de productos hipoalergénicos</li>
+        <li><i class="bi bi-check-circle-fill text-danger"></i> Acabado duradero y brillante</li>
+      </ul>
+      <a href="./uñas.html" class="btn btn-pink btn-lg btn-hover-scale">¡Reserva tu cita!</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-5 text-light pt-4">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <!-- Redes sociales -->
+        <div class="col-md-4 mb-3">
+          <h5>Síguenos</h5>
+          <div class="social-icons">
+            <a href="#" class="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="whatsapp" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            <a href="#" class="tiktok" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+        </div>
+        <!-- Información -->
+        <div class="col-md-4 mb-3">
+          <h5>Información</h5>
+          <ul>
+            <li><a href="#">Sobre Nosotros</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+        <!-- Contacto -->
+        <div class="col-md-4 mb-3">
+          <h5>Contacto</h5>
+          <p>IZA - BOYACA - COLOMBIA </p>
+          <p>Email: contacto@barbernailspro.com</p>
+          <p>Tel: +57 314 4778275</p>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <p>© 2025 BarberNails Pro. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
