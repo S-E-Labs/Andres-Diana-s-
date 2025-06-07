@@ -2,55 +2,109 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>¿Registro? ¡JAJA NO!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Error 404 - ¿Registro? Jajaja</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      height: 100vh;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      height: 100vh;
+      justify-content: center;
+      font-family: 'Press Start 2P', cursive;
+      color: #0ff;
       text-align: center;
-      padding: 20px;
+      position: relative;
     }
-    img {
-      max-width: 100%;
-      width: 400px;
-      border-radius: 20px;
-      box-shadow: 0 0 20px #ff0000;
-      margin-bottom: 20px;
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+      animation: pulse 4s infinite;
+      z-index: 0;
     }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.1;
+      }
+    }
+
     h1 {
-      font-size: 4rem;
-      margin-bottom: 10px;
-      color: #ff4d4f;
-    }
-    p {
-      font-size: 1.5rem;
+      font-size: 3rem;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
       margin-bottom: 20px;
+      z-index: 1;
     }
+
+    p {
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 30px;
+      z-index: 1;
+    }
+
+    .meme {
+      width: 300px;
+      border-radius: 20px;
+      animation: bounce 2.5s infinite ease-in-out;
+      box-shadow: 0 0 20px #ff00ff;
+      z-index: 1;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
     a {
-      text-decoration: none;
-      background-color: #ff4d4f;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      border: none;
+      color: black;
       font-weight: bold;
-      transition: 0.3s;
+      text-decoration: none;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #00ffff;
+      transition: all 0.3s ease;
+      z-index: 1;
     }
+
     a:hover {
-      background-color: #d9363e;
+      background: linear-gradient(45deg, #00ffff, #ff00ff);
+      box-shadow: 0 0 30px #00ffff;
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
-  <img src="https://i.imgflip.com/4/4t0m5.jpg" alt="Meme 404" />
-  <h1>404 - ¿Registro?</h1>
-  <p>Esta página no existe, bro... vuelve atrás antes de que el admin te vea 😳</p>
-  <a href="index.html">Volver al inicio</a>
+  <h1>ERROR 404</h1>
+  <p>¿Registro? Jajaja, esa página no existe bro 😎</p>
+  <img class="meme" src="https://i.imgflip.com/4/4t0m5.jpg" alt="Meme divertido" />
+  <br><br>
+  <a href="index.html">Volver al Inicio</a>
 </body>
 </html>
